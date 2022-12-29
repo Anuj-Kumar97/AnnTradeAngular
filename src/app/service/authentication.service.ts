@@ -18,7 +18,7 @@ export class AuthenticationService {
 
   authenticate(username, password) {
     return this.httpClient
-      .post<any>('http://localhost:8001/authenticate', { username, password })
+      .post<any>('http://productserviceloadbalancer-2101711574.ap-south-1.elb.amazonaws.com/authenticate', { username, password })
       .pipe(
         map((userData) => {
           sessionStorage.setItem('username', username);
